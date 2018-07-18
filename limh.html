@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>LIMH Technologies</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div style="max-width: 578px;" class="container">
+        <div class="card">
+          <div class="card-body">Change Meal Plan
+              <div style="float: right;">
+                  <i id="close" class="fa fa-window-close" aria-hidden="true"></i>
+              </div>
+          </div>
+          <hr>
+          <div>
+              <p id="subscriptionplan">SUBSCRIPTION PLAN</p>
+              <div>
+                <div>
+                    <button id="mediumbutton" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                      Medium (12 Items)
+                    </button>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="#"> Small (5 Items)</a>
+                      <a class="dropdown-item" href="#"> Medium (12 Items)</a>
+                      <a class="dropdown-item" href="#"> Large (20 Items)</a>
+                    </div>
+                  </div>
+              </div>
+          </div>
+          <div style="align-self: center">
+            <div >
+                <label class="switch">
+                  <div id="toggletext1"><span>Once a Week</span></div>
+                </label>
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider round"></span>
+                </label>
+                <label class="switch">
+                    <div id="toggletext2"><p>Twice a Week<sup> New</sup></p></div>
+                </label>
+            </div>
+          </div>
+         
+          <p class="content">Choose When You want Deliveries</p>
+          <div>
+              <div class="Table">
+                  <div class="Heading">
+                      <div class="Cell">
+                          <p>MON</p>
+                      </div>
+                      <div class="Cell">
+                          <p>TUE</p>
+                      </div>
+                      <div class="Cell">
+                          <p>WED</p>
+                      </div>
+                      <div class="Cell">
+                          <p>THU</p>
+                      </div>
+                      <div class="Cell">
+                          <p>FRI</p>
+                      </div>
+                      <div class="Cell">
+                          <p>SAT</p>
+                      </div>
+                  </div>
+                  <!-- <div class="Row">
+                      <div class="Cell">
+                          <p>Row 1 Column 1</p>
+                      </div>
+                      <div class="Cell">
+                          <p>Row 1 Column 2</p>
+                      </div>
+                      <div class="Cell">
+                          <p>Row 1 Column 3</p>
+                      </div>
+                  </div> -->
+                  <!-- <div class="Row">
+                      <div class="Cell">
+                          <p>Row 2 Column 1</p>
+                      </div>
+                      <div class="Cell">
+                          <p>Row 2 Column 2</p>
+                      </div>
+                      <div class="Cell">
+                          <p>Row 2 Column 3</p>
+                      </div>
+                  </div> -->
+              </div>
+          </div>
+          <div class="content">
+            <span>You will receive</span><a href="#" class="link"> 12 Items on Tuesdays</a>
+          </div>
+          <hr>
+          <button id="done" type="button" class="btn">DONE</button>
+          <br>
+          
+        </div>
+        </div>
+    </div>
+</body>
+</html>
