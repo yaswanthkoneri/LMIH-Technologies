@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div style="max-width: 578px;" class="container">
+    <div class="container">
         <div class="card">
           <div class="card-body">Change Meal Plan
               <div style="float: right;">
@@ -18,85 +18,73 @@
               </div>
           </div>
           <hr>
-          <div>
-              <p id="subscriptionplan">SUBSCRIPTION PLAN</p>
-              <div>
-                <div>
-                    <button id="mediumbutton" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                      Medium (12 Items)
-                    </button>
-                    <div class="dropdown-menu">
-                      <a class="dropdown-item" href="#"> Small (5 Items)</a>
-                      <a class="dropdown-item" href="#"> Medium (12 Items)</a>
-                      <a class="dropdown-item" href="#"> Large (20 Items)</a>
-                    </div>
-                  </div>
-              </div>
+          <div class="body-header">
+                <p id="subscriptionplan">SUBSCRIPTION PLAN</p>               
+                <select onchange="getSelectedValue()" id="mediumbutton">
+                        <option value=" 5 Items ">Small (5 Items)</option>
+                        <option value=" 12 Items ">Medium (12 Items)</option>
+                        <option value=" 20 Items ">Large (20 Items)</option>
+                        <option value=" 25 Items ">Extra Large (25 Items)</option>
+                </select>              
           </div>
           <div style="align-self: center">
             <div >
                 <label class="switch">
-                  <div id="toggletext1"><span>Once a Week</span></div>
+                  <div id="toggletext1"><span class="selected-check">Once a Week</span></div>
                 </label>
+                    <label class="switch">
+                        <div class="checkbox checbox-switch switch-primary">
+                            <label>
+                                <input id="toggle" onclick="changeToogleTextColor()" type="checkbox" name="" />
+                                <span></span>                                        
+                            </label>
+                        </div>
+                    </label>
                 <label class="switch">
-                    <input type="checkbox" checked>
-                    <span class="slider round"></span>
-                </label>
-                <label class="switch">
-                    <div id="toggletext2"><p>Twice a Week<sup> New</sup></p></div>
+                    <div id="toggletext2"><span>Twice a Week<sup> New</sup></span></div>
                 </label>
             </div>
           </div>
          
           <p class="content">Choose When You want Deliveries</p>
+          <br/>
           <div>
               <div class="Table">
                   <div class="Heading">
                       <div class="Cell">
-                          <p>MON</p>
+                            <input title="Monday" onclick="ChangeColor(0);changeText(0);" id="mon" type="checkbox" />
+                          <p class="days">MON</p>
                       </div>
                       <div class="Cell">
-                          <p>TUE</p>
+                        <input title="Tuesday" onclick="ChangeColor(1);changeText(1);" id="tue" type="checkbox" />
+                          <p class="days">TUE</p>
                       </div>
                       <div class="Cell">
-                          <p>WED</p>
+                        <input title="Wednesday" onclick="ChangeColor(2);changeText(2);" type="checkbox" />
+                          <p class="days">WED</p>
+                          
                       </div>
                       <div class="Cell">
-                          <p>THU</p>
+                        <input title="Thursday" onclick="ChangeColor(3);changeText(3);" type="checkbox" />
+                        <p class="days">THU</p>
                       </div>
                       <div class="Cell">
-                          <p>FRI</p>
+                          <div class="day-checkbox">
+                            <input title="Friday" onclick="ChangeColor(4);changeText(4);" type="checkbox" />
+                            <p class="days">FRI</p>
+                          </div>  
+                            <span>12 Items</span>
                       </div>
                       <div class="Cell">
-                          <p>SAT</p>
+                        <input title="Saturday" onclick="ChangeColor(5);changeText(5);" type="checkbox" />
+                        <p class="days">SAT</p>
                       </div>
                   </div>
-                  <!-- <div class="Row">
-                      <div class="Cell">
-                          <p>Row 1 Column 1</p>
-                      </div>
-                      <div class="Cell">
-                          <p>Row 1 Column 2</p>
-                      </div>
-                      <div class="Cell">
-                          <p>Row 1 Column 3</p>
-                      </div>
-                  </div> -->
-                  <!-- <div class="Row">
-                      <div class="Cell">
-                          <p>Row 2 Column 1</p>
-                      </div>
-                      <div class="Cell">
-                          <p>Row 2 Column 2</p>
-                      </div>
-                      <div class="Cell">
-                          <p>Row 2 Column 3</p>
-                      </div>
-                  </div> -->
               </div>
           </div>
+          <br/>
           <div class="content">
-            <span>You will receive</span><a href="#" class="link"> 12 Items on Tuesdays</a>
+            <span>You will receive</span><a href="#" id="items" class="link"> 5 Items </a><a href="#" class="link">on </a><a href="#" class="link" id="days"></a>
           </div>
           <hr>
           <button id="done" type="button" class="btn">DONE</button>
@@ -105,5 +93,40 @@
         </div>
         </div>
     </div>
+    <script>
+    var color= "#03A8AC"
+    function ChangeColor(id) {
+    var clrDiv = document.getElementsByClassName("Cell")[id];
+    if (clrDiv.style.backgroundColor=="" ){
+        clrDiv.style.backgroundColor = color;
+        $(".days")[id].style.color = "white";
+    }
+    else{
+        clrDiv.style.backgroundColor = "";
+        $(".days")[id].style.color = "#ccc";
+    }
+    }
+
+    function changeText(id){
+        var text =document.getElementsByClassName("Cell")[id].getElementsByTagName("input")[0].getAttribute("title")
+        $("#days").html(text)
+    }
+    function getSelectedValue(){
+        var val = $("#mediumbutton").val()
+        $("#items").html(val)
+    }
+    function changeToogleTextColor(){
+        var checked = document.getElementById('toggle').checked;
+        $('#toggletext1 > span').addClass('selected-check');    
+        if(checked){
+            $('#toggletext1 > span').removeClass('selected-check');    
+            $('#toggletext2 > span').addClass('selected-check');
+             
+        }else{
+            $('#toggletext1 > span').addClass('selected-check');
+            $('#toggletext2 > span').removeClass('selected-check');
+        }
+    }
+    </script>
 </body>
 </html>
