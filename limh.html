@@ -1,132 +1,160 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>LIMH Technologies</title>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="container">
-        <div class="card">
-          <div class="card-body">Change Meal Plan
-              <div style="float: right;">
+   <head>
+      <title>LIMH Technologies</title>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" href="style.css">
+   </head>
+   <body>
+      <div class="container">
+         <div class="card">
+            <div class="card-body">
+               Change Meal Plan
+               <div style="float: right;">
                   <i id="close" class="fa fa-window-close" aria-hidden="true"></i>
-              </div>
-          </div>
-          <hr>
-          <div class="body-header">
-                <p id="subscriptionplan">SUBSCRIPTION PLAN</p>               
-                <select onchange="getSelectedValue()" id="mediumbutton">
-                        <option value=" 5 Items ">Small (5 Items)</option>
-                        <option value=" 12 Items ">Medium (12 Items)</option>
-                        <option value=" 20 Items ">Large (20 Items)</option>
-                        <option value=" 25 Items ">Extra Large (25 Items)</option>
-                </select>              
-          </div>
-          <div style="align-self: center">
-            <div >
-                <label class="switch">
-                  <div id="toggletext1"><span class="selected-check">Once a Week</span></div>
-                </label>
-                    <label class="switch">
-                        <div class="checkbox checbox-switch switch-primary">
-                            <label>
-                                <input id="toggle" onclick="changeToogleTextColor()" type="checkbox" name="" />
-                                <span></span>                                        
-                            </label>
-                        </div>
-                    </label>
-                <label class="switch">
-                    <div id="toggletext2"><span>Twice a Week<sup> New</sup></span></div>
-                </label>
+               </div>
             </div>
-          </div>
-         
-          <p class="content">Choose When You want Deliveries</p>
-          <br/>
-          <div>
-              <div class="Table">
-                  <div class="Heading">
-                      <div class="Cell">
-                            <input title="Monday" onclick="ChangeColor(0);changeText(0);" id="mon" type="checkbox" />
-                          <p class="days">MON</p>
-                      </div>
-                      <div class="Cell">
-                        <input title="Tuesday" onclick="ChangeColor(1);changeText(1);" id="tue" type="checkbox" />
-                          <p class="days">TUE</p>
-                      </div>
-                      <div class="Cell">
-                        <input title="Wednesday" onclick="ChangeColor(2);changeText(2);" type="checkbox" />
-                          <p class="days">WED</p>
-                          
-                      </div>
-                      <div class="Cell">
-                        <input title="Thursday" onclick="ChangeColor(3);changeText(3);" type="checkbox" />
-                        <p class="days">THU</p>
-                      </div>
-                      <div class="Cell">
-                          <div class="day-checkbox">
-                            <input title="Friday" onclick="ChangeColor(4);changeText(4);" type="checkbox" />
-                            <p class="days">FRI</p>
-                          </div>  
-                            <span>12 Items</span>
-                      </div>
-                      <div class="Cell">
-                        <input title="Saturday" onclick="ChangeColor(5);changeText(5);" type="checkbox" />
-                        <p class="days">SAT</p>
-                      </div>
+            <hr>
+            <div class="body-header">
+               <p id="subscriptionplan">SUBSCRIPTION PLAN</p>
+               <select onchange="getSelectedValue()" id="mediumbutton">
+                  <option value=" 5 Items ">Small (5 Items)</option>
+                  <option value=" 12 Items ">Medium (12 Items)</option>
+                  <option value=" 20 Items ">Large (20 Items)</option>
+                  <option value=" 25 Items ">Extra Large (25 Items)</option>
+               </select>
+            </div>
+            <div style="align-self: center">
+               <div >
+                  <label class="switch">
+                     <div id="toggletext1"><span class="selected-check">Once a Week</span></div>
+                  </label>
+                  <label class="switch">
+                     <div class="checkbox checbox-switch switch-primary">
+                  <label>
+                  <input id="toggle" onclick="changeToogleTextColor()" type="checkbox" name="" />
+                  <span></span>                                        
+                  </label>
                   </div>
-              </div>
-          </div>
-          <br/>
-          <div class="content">
-            <span>You will receive</span><a href="#" id="items" class="link"> 5 Items </a><a href="#" class="link">on </a><a href="#" class="link" id="days"></a>
-          </div>
-          <hr>
-          <button id="done" type="button" class="btn">DONE</button>
-          <br>
-          
-        </div>
-        </div>
-    </div>
-    <script>
-    var color= "#03A8AC"
-    function ChangeColor(id) {
-    var clrDiv = document.getElementsByClassName("Cell")[id];
-    if (clrDiv.style.backgroundColor=="" ){
-        clrDiv.style.backgroundColor = color;
-        $(".days")[id].style.color = "white";
-    }
-    else{
-        clrDiv.style.backgroundColor = "";
-        $(".days")[id].style.color = "#ccc";
-    }
-    }
-
-    function changeText(id){
-        var text =document.getElementsByClassName("Cell")[id].getElementsByTagName("input")[0].getAttribute("title")
-        $("#days").html(text)
-    }
-    function getSelectedValue(){
-        var val = $("#mediumbutton").val()
-        $("#items").html(val)
-    }
-    function changeToogleTextColor(){
-        var checked = document.getElementById('toggle').checked;
-        $('#toggletext1 > span').addClass('selected-check');    
-        if(checked){
-            $('#toggletext1 > span').removeClass('selected-check');    
-            $('#toggletext2 > span').addClass('selected-check');
-             
-        }else{
-            $('#toggletext1 > span').addClass('selected-check');
-            $('#toggletext2 > span').removeClass('selected-check');
-        }
-    }
-    </script>
-</body>
+                  </label>
+                  <label class="switch">
+                     <div id="toggletext2"><span>Twice a Week<sup> New</sup></span></div>
+                  </label>
+               </div>
+            </div>
+            <p class="content">Choose When You want Deliveries</p>
+            <br/>
+            <div>
+               <div class="Table">
+                  <div class="Heading">
+                     <label for="monday">
+                        <div class="Cell">
+                           <div class="day-checkbox">
+                              <input id="monday" title="Monday" onclick="ChangeColor(0);changeText(0);" id="mon" type="checkbox" />
+                              <p class="days">MON</p>
+                           </div>
+                           <span class="item-details">5 Items</span>
+                        </div>
+                     </label>
+                     <label for="tuesday">
+                        <div class="Cell">
+                           <div class="day-checkbox">
+                              <input id="tuesday" title="Tuesday" onclick="ChangeColor(1);changeText(1);" id="tue" type="checkbox" />
+                              <p class="days">TUE</p>
+                           </div>
+                           <span class="item-details">5 Items</span>
+                        </div>
+                     </label>
+                     <label for="wednesday">
+                        <div class="Cell">
+                           <div class="day-checkbox">
+                              <input id="wednesday" title="Wednesday" onclick="ChangeColor(2);changeText(2);" type="checkbox" />
+                              <p class="days">WED</p>
+                           </div>
+                           <span class="item-details">5 Items</span>
+                        </div>
+                     </label>
+                     <label for="thursday">
+                        <div class="Cell">
+                           <div class="day-checkbox">
+                              <input id="thursday" title="Thursday" onclick="ChangeColor(3);changeText(3);" type="checkbox" />
+                              <p class="days">THU</p>
+                           </div>
+                           <span class="item-details">5 Items</span>
+                        </div>
+                     </label>
+                     <label for="friday">
+                        <div class="Cell">
+                           <div class="day-checkbox">
+                              <input id="friday" title="Friday" onclick="ChangeColor(4);changeText(4);" type="checkbox" />
+                              <p class="days">FRI</p>
+                           </div>
+                           <span class="item-details">5 Items</span>
+                        </div>
+                     </label>
+                     <label for="saturday">
+                        <div class="Cell">
+                           <div class="day-checkbox">
+                              <input id="saturday" title="Saturday" onclick="ChangeColor(5);changeText(5);" type="checkbox" />
+                              <p class="days">SAT</p>
+                           </div>
+                           <span class="item-details">5 Items</span>
+                        </div>
+                     </label>
+                  </div>
+               </div>
+            </div>
+            <br/>
+            <div class="content">
+               <span>You will receive</span><a href="#" id="items" class="link"> 5 Items </a><a href="#" class="link">on </a><a href="#" class="link" id="days"></a>
+            </div>
+            <hr>
+            <button id="done" type="button" class="btn">DONE</button>
+            <br>
+         </div>
+      </div>
+      </div>
+      <script>
+         var color= "#03A8AC"
+         function ChangeColor(id) {
+         var clrDiv = document.getElementsByClassName("Cell")[id];
+         if (clrDiv.style.backgroundColor=="" ){
+             clrDiv.style.backgroundColor = color;
+             $(".days")[id].style.color = "white";
+             clrDiv.getElementsByTagName("span")[0].style.color="white"
+         }
+         else{
+             clrDiv.style.backgroundColor = "";
+             $(".days")[id].style.color = "#ccc";
+             clrDiv.getElementsByTagName("span")[0].style.color="black"
+         }
+         }
+         
+         function changeText(id){
+             var text =document.getElementsByClassName("Cell")[id].getElementsByTagName("input")[0].getAttribute("title")
+             $("#days").html(text)
+         }
+         function getSelectedValue(){
+             var val = $("#mediumbutton").val()
+             $("#items").html(val)
+             $(".item-details").html(val)
+         }
+         function changeToogleTextColor(){
+             var checked = document.getElementById('toggle').checked;
+             $('#toggletext1 > span').addClass('selected-check');    
+             if(checked){
+                 $('#toggletext1 > span').removeClass('selected-check');    
+                 $('#toggletext2 > span').addClass('selected-check');
+                  
+             }else{
+                 $('#toggletext1 > span').addClass('selected-check');
+                 $('#toggletext2 > span').removeClass('selected-check');
+             }
+         }
+      </script>
+   </body>
 </html>
