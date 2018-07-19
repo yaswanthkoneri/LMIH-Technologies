@@ -59,6 +59,7 @@ sup{
     padding:-0.25rem !important;
     text-align: center;
     font-weight: 600;
+    height: 0px;
 }
 
 .container{
